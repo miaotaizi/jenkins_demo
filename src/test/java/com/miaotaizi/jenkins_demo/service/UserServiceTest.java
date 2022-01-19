@@ -95,8 +95,6 @@ class UserServiceTest {
 
     @Test
     public void testListQuery() {
-        List<User> list = this.userService.list();
-        assertEquals(list.stream().count(), 20);
         Page<User> userIPage = new Page<>(1,  5);
         this.userService.page(userIPage);
         logger.info("总条数 -------------> {}", userIPage.getTotal());
